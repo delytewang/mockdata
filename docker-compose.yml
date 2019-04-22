@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  fullenterprise:
+    image: 'delyte/jsonserver:latest'
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ./fullenterprise.json:/data/db.json
+    ports:
+       - "19085:80"
+  fullshareholder:
+    image: 'delyte/jsonserver:latest'
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ./fullshareholder.json:/data/db.json
+    ports:
+       - "19086:80"
